@@ -1,4 +1,4 @@
-# Taking Advantage of Multi Site Features in ANS 0.6.0
+# Taking Advantage of Multisite Features in ANS 0.6.0
 
 ## Introduction
 
@@ -6,7 +6,7 @@ In ANS 0.6.0, Arc Publishing has implemented the first set of features for publi
 
 ANS 0.6.0 will be available for all Arc customers on January 25th.
 
-This document demonstrates how to take advantage of the new multi-site features in Arc Publishing using the public API.
+This document demonstrates how to take advantage of the new multisite features in Arc Publishing using the public API.
 
 ## Goals
 
@@ -41,14 +41,14 @@ This guide will show how to use the Arc APIs to:
 
 See ["Accessing the APIs" in the Publishing a Document Example](https://github.com/washingtonpost/arc-api-documentation/blob/master/examples/publishing.md#accessing-the-apis). We'll make the same assumptions here.
 
-Note for several key Arc APIs, new API versions have been released. In order to use multi site features, you'll need to use the following API versions:
+Note for several key Arc APIs, new API versions have been released. In order to use multisite features, you'll need to use the following API versions:
 
 * URL API: v2 or higher (released 2018.01)
 * Site API: v3 or higher (released 2017.10)
 * Content API: v4 or higher (release 2018.01)
 * Story API: users can continue using the v2 API
 
-For Content API, Story API and URL API endpoints that expect or return an ANS document, ANS 0.6.0 or higher is also required to use multi site features.
+For Content API, Story API and URL API endpoints that expect or return an ANS document, ANS 0.6.0 or higher is also required to use multisite features.
 
 ## Create distinct section taxonomies
 
@@ -239,7 +239,7 @@ curl -X PUT http://api.thepost.arcpublishing.com/story/v2/story/ABCDEFGHIJKLMNOP
 {"_id":"ABCDEFGHIJKLMNOPQRSTUVWXYZ","type":"story","version":"0.6.0","content_elements":[{"_id":"2L565CADAZGXBCCJHRCZPA4L2A","type":"text","content":"In a surprise upset, The River Turtles of River City have defeated their long-time rivals, The Mountain Goats of Mountain Village, in a tightly-contested match lasting over five hours. The final score was 26-25."}],"created_date":"2018-01-18T22:15:10.044Z","revision":{"revision_id":"BCDEFGHIJKLMNOPQRSTUVWXYZA","branch":"default"},"last_updated_date":"2018-01-18T22:15:10.044Z","headlines":{"basic":"River Turtles Defeat Mountain Goats in Annual Croquet Match"},"owner":{"id":"thepost"},"display_date":"2018-01-18T12:00:00Z","credits":{"by":[{"type":"author","version":"0.6.0","name":"Brooks Robinson"}]},"websites":{"rivercitynews":{},"mountainvillagegazette":{}},"taxonomy":{"sections":[{"type":"reference","referent":{"type":"section","id":"/sports","website":"rivercitynews"}},{"type":"reference","referent":{"type":"section","id":"/news","website":"rivercitynews"}},{"type":"reference","referent":{"type":"section","id":"/sports","website":"mountainvillagegazette"}},{"type":"reference","referent":{"type":"section","id":"/sports/the-mountain-goats","website":"mountainvillagegazette"}}]},"additional_properties":{"has_published_copy":false},"canonical_website":"rivercitynews"}
 ```
 
-We can then fetch a denormalized version of this draft document from the Content API's mutli-site endpoint, from either website:
+We can then fetch a denormalized version of this draft document from the Content API's mutlisite endpoint, from either website:
 
 ```bash
 curl -X GET 'https://api.thepost.arcpublishing.com/content/v4/stories?_id=ABCDEFGHIJKLMNOPQRSTUVWXYZ&published=false&website=rivercitynews'
@@ -497,7 +497,7 @@ The *canonical_url* field was populated by finding the appropriate *website_url*
 
 The above scenario works if the content author has a particular url in mind for each document on each website. Most of the time, however, authors just want to publish a story and have the URL generated for them.  Furthermore, what if different websites have different ideas about how URLs should look? A simple blog might want all articles to have dates in the url, e.g., /2018/01/18/river-turtles-defeat-mountain-goats.html, while a large newspaper might want everything subdivided into sections, like The Mountain Village Gazette above.
 
-Both scenarios can be handled using *URL formats*, which is Arc's solution for automatically generating URLs, and is now fully multi site compatible. The complete rules for URL generation are beyond the scope of the this document, but can be found the in URL Service API Documentation, as well as in the URL Serice web app.
+Both scenarios can be handled using *URL formats*, which is Arc's solution for automatically generating URLs, and is now fully multisite compatible. The complete rules for URL generation are beyond the scope of the this document, but can be found the in URL Service API Documentation, as well as in the URL Serice web app.
 
 For now, let's create a URL-formatting rule for The Mountain Village Gazette which would generate the URL we used above:
 
