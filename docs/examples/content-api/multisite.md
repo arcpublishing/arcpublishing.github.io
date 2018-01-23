@@ -1,4 +1,4 @@
-# Taking Advantage of Multi-Site Features in ANS 0.6.0
+# Taking Advantage of Multi Site Features in ANS 0.6.0
 
 ## Introduction
 
@@ -41,14 +41,14 @@ This guide will show how to use the Arc APIs to:
 
 See ["Accessing the APIs" in the Publishing a Document Example](https://github.com/washingtonpost/arc-api-documentation/blob/master/examples/publishing.md#accessing-the-apis). We'll make the same assumptions here.
 
-Note for several key Arc APIs, new API versions have been released. In order to use multisite features, you'll need to use the following API versions:
+Note for several key Arc APIs, new API versions have been released. In order to use multi site features, you'll need to use the following API versions:
 
 * URL API: v2 or higher (released 2018.01)
 * Site API: v3 or higher (released 2017.10)
 * Content API: v4 or higher (release 2018.01)
 * Story API: users can continue using the v2 API
 
-For Content API, Story API and URL API endpoints that expect or return an ANS document, ANS 0.6.0 or higher is also required to use multisite features.
+For Content API, Story API and URL API endpoints that expect or return an ANS document, ANS 0.6.0 or higher is also required to use multi site features.
 
 ## Create distinct section taxonomies
 
@@ -497,7 +497,7 @@ The *canonical_url* field was populated by finding the appropriate *website_url*
 
 The above scenario works if the content author has a particular url in mind for each document on each website. Most of the time, however, authors just want to publish a story and have the URL generated for them.  Furthermore, what if different websites have different ideas about how URLs should look? A simple blog might want all articles to have dates in the url, e.g., /2018/01/18/river-turtles-defeat-mountain-goats.html, while a large newspaper might want everything subdivided into sections, like The Mountain Village Gazette above.
 
-Both scenarios can be handled using *URL formats*, which is Arc's solution for automatically generating URLs, and is now fully multi-site compatible. The complete rules for URL generation are beyond the scope of the this document, but can be found the in URL Service API Documentation, as well as in the URL Serice web app.
+Both scenarios can be handled using *URL formats*, which is Arc's solution for automatically generating URLs, and is now fully multi site compatible. The complete rules for URL generation are beyond the scope of the this document, but can be found the in URL Service API Documentation, as well as in the URL Serice web app.
 
 For now, let's create a URL-formatting rule for The Mountain Village Gazette which would generate the URL we used above:
 
