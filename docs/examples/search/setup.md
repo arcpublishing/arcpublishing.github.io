@@ -109,14 +109,42 @@ A full list of API parameters and response fields is available in the [API Docum
       1. Anyone who uses the Feature Pack should be able to use the feed-driven flex feature to format a results list
          that more or less resembles the existing search results list feature.
 
-### Tips for Building Custom Search Features:
+### Building Basic Search Features in PageBuilder
 
-To get the number of total hits, include this in your JSP:
+A very basic search feature in PageBuilder should include the headline, promo item, publication date, and description for a story. If you wish to support a custom search feature, this can be achieved by using a <c:forEach> loop to iterate over the items in the `data` object and print out the fields you wish to include.
+
+Very often, a search page includes a feature that prints out the name of the search term and the total number of results for the term. To get the number of total hits, include this in your JSP:
 `<fmt:formatNumber value="${content.metadata.total_hits}" pattern="#,###" var="formattedTotalHits" />`
 
-To display the search term to the user in a page header, we built a searchqueryformat.tag to sanitize the search term
-and print it out nicely.
+Button-based pagination can be created by utilizing the `page` option within the API. See pagination.jsp for an example of how to create a parameterized pagination feature.
 
-Button-based pagination can be created by utilizing the `page` option within the API.
+To create features that allow users to filter results based on content type or timeframe, see filtering.jsp.
 
-### A Basic Search Feature in PageBuilder
+### searchqueryformat.tag
+
+To display the search term to the user in a page header, we built a searchqueryformat.tag to sanitize the search term and print it out nicely.
+
+The following code takes in a query and outputs it in a plain-text sanitized string. This prevents any malicious code from being put into the page.
+
+```javascript
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib uri="http://platform.washingtonpost.com/pagebuilder" prefix="pb" %>
+<%@ taglib tagdir="/WEB-INF/tags/arc" prefix="arc" %>
+<%@ tag import="java.net.URLDecoder"%>
+
+<%@ attribute name="var" required="true" type="java.lang.Object" %>
+<%@ attribute name="query" required="true" type="java.lang.Object" %>
+
+<%-- URL decode, since PB encodes it --%>
+<c:set var="updatedQuery"><%=URLDecoder.decode(jspContext.getAttribute("query").toString())%></c:set>
+
+<%-- PB also transforms spaces into '+', which needs to be reverted --%>
+<c:set var="updatedQuery" value="${fn:replace(updatedQuery, '+', ' ')}" />
+
+<%-- in case any scripts were introduced as search-term, this will prevent them from running --%>
+<c:set var="updatedQuery" value="${fn:escapeXml(updatedQuery)}" />
+
+${pageContext.request.setAttribute(var, updatedQuery)}
+```
