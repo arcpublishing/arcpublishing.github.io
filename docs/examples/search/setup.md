@@ -68,7 +68,7 @@ You can test your API key by hitting the Arc Search API directly in your browser
 }
 ```
 
-Because it use in your organization's API key, you should *not* make search requests directly client-side, but instead create a PageBuilder content source to host your queries. (We'll come back to that later.)
+Because it uses your organization's API key, you should *not* make search requests directly client-side, but instead create a PageBuilder content source to host your queries. (We'll come back to that later.)
 
 The most important request and response fields are detailed below.
 
