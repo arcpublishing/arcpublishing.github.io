@@ -2,9 +2,7 @@
 
 ## Introduction
 
-(Text here - Anais)
-
-This guide is designed to help you get up and running with Arc Search.
+Arc Search allows your readers to discover content on your website. They can search, filter, and sort while searching. Discoverability and personalization in the search process is a key component to the user experience of Arc Search, allowing for content to quickly accessible to readers. Arc Search is also natively be in ANS, which conforms to the rest of Arc’s platform and your Pagebuilder templates - creating an easier-to-use solution, and the ability to adapt search as the Arc platform grows.This guide is designed to help you get up and running with Arc Search.
 
 ### Prequisites
 
@@ -16,7 +14,7 @@ This guide is designed to help you get up and running with Arc Search.
 #### Requesting an API Key
 
 Arc Search is powered by data from Arc Content API. Indexing the Content API data into Search takes some time
-and must be requested. To turn on Arc Search, contact your engagement manager and request an API key for Arc Search.
+and must be requested. To turn on Arc Search, contact your account manager and request an API key for Arc Search.
 
 ### Additional Documentation
 
