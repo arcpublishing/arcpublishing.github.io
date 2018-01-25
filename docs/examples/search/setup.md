@@ -9,7 +9,8 @@ This guide is designed to help you get up and running with Arc Search.
 ### Prequisites
 
 * An existing account on Arc Publishing
-* Familiarity with ANS, PageBuilder content sources and PageBuilder templates
+* Familiarity with ANS
+* Familiarity with PageBuilder content sources, resolvers and features
 * An Arc Search API Key (see below)
 
 #### Requesting an API Key
