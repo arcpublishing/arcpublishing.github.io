@@ -27,14 +27,14 @@ and must be requested. To turn on Arc Search, contact your engagement manager an
 ### Setting up Arc Search as a PageBuilder content source
 
    1. Ensure that the `data` attribute is set to `data=content_elements`. This will place all results from the endpoint in a
-      `content_elements` object in the response, which mimics the Content API format. This will allow you to pipe search results
+      `content_elements` object in the response, which mimics the ANS format. This will allow you to pipe search results
       into any feed-driven feature.
 
       Example:
       `https://search.arcpublishing.com/search?q={QUERY}&timeframe={TIMEFRAME}&t={TYPE}&page={PAGE}&per_page={NUM_RESULTS}&data=content_elements&key=<your_key_here>`
 
    2. Set up a resolver or modify the existing resolver for search to use the new search content source
-      1. identify whether the search term will be incorporated into the URL pattern or appended as a parameter.
+      1. Identify whether the search term will be incorporated into the URL pattern or appended as a parameter.
    3. Set the default values for the TIMEFRAME, TYPE, PAGE, and NUM_RESULTS variables in the endpoint.
    4. The only variable required to come from the URL or parameter is QUERY, so others should be given fallback/default values.
    5. In the search template, update the search feed feature to use the feed-driven flex feature, or any similar
@@ -44,8 +44,8 @@ and must be requested. To turn on Arc Search, contact your engagement manager an
 
 ### Tips for Building Custom Search Features:
 
-To get the number of total hits:
-<fmt:formatNumber value="${content.metadata.total_hits}" pattern="#,###" var="formattedTotalHits" />
+To get the number of total hits, include this in your JSP:
+`<fmt:formatNumber value="${content.metadata.total_hits}" pattern="#,###" var="formattedTotalHits" />`
 
 To display the search term to the user in a page header, we built a searchqueryformat.tag to sanitize the search term
 and print it out nicely.
