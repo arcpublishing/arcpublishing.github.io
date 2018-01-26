@@ -52,7 +52,7 @@ For Content API, Story API and URL API endpoints that expect or return an ANS do
 
 ## Create distinct section taxonomies
 
-We'll start by creating the websites and sections for our organization. Websites and sections are efined via the Site API. Full documentation for the Site API v3 is available at (https://arcpublishing.github.io/docs/api/site/).
+We'll start by creating the websites and sections for our organization. Websites and sections are defined via the Site API. Full documentation for the Site API v3 is available at (https://arcpublishing.github.io/docs/api/site/).
 
 Let's create two websites called "The River City News" and "The Mountain Village Gazette."
 
