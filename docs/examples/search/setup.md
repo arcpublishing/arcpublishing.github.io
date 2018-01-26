@@ -72,7 +72,7 @@ Because it uses your organization's API key, you should *not* make search reques
 
 The most important request and response fields are detailed below.
 
-### Basic Search Parameters
+#### Basic Search Parameters
 
 * `q` is a tokenized keyword query that will be used to search your content. It is **required**.
 * `page` and `per_page` are used to control pagination
@@ -81,7 +81,7 @@ The most important request and response fields are detailed below.
   * `score` - sort results by relevancy
   * `date` -- sort results in a reverse chronological order
 
-### Response Data
+#### Response Data
 
 * `metadata` includes all of the original search parameters as well as the count of the query results and and time of the
 
@@ -120,7 +120,7 @@ Button-based pagination can be created by utilizing the `page` option within the
 
 To create features that allow users to filter results based on content type or timeframe, see filtering.jsp.
 
-### searchqueryformat.tag
+#### searchqueryformat.tag
 
 To display the search term to the user in a page header, we built a searchqueryformat.tag to sanitize the search term and print it out nicely.
 
