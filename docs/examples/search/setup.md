@@ -87,6 +87,8 @@ The most important request and response fields are detailed below.
 
 * `data` is a list of ANS documents returned by our search query. Note that although these documents are sourced from the Arc Content API, they do **not** include the full document that is available in the Content API.  This keeps the payload smaller and faster, which is important if you're rendering this data client-side.
 
+* `aggregations` lists the total count found (`all`) and the total count found by content type (`story`, `gallery`, `video`)
+
 For convenience, the `data`, `metadata` and `aggregations` response attributes can each be renamed (e.g, to `content_elements`) by setting them as a query parameter in the request. (E.g. `?data=content_elements`)
 
 A full list of API parameters and response fields is available in the [API Documentation](https://s3.amazonaws.com/search-service-documentation-production/index.html#api-Search).
