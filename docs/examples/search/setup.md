@@ -118,9 +118,9 @@ A very basic search feature in PageBuilder should include the headline, promo it
 Very often, a search page includes a feature that prints out the name of the search term and the total number of results for the term. To get the number of total hits, include this in your JSP:
 `<fmt:formatNumber value="${content.metadata.total_hits}" pattern="#,###" var="formattedTotalHits" />`
 
-Button-based pagination can be created by utilizing the `page` option within the API. See pagination.jsp for an example of how to create a parameterized pagination feature.
+Button-based pagination can be created by utilizing the `page` option within the API. See [pagination.jsp](pagination.jsp) for an example of how to create a parameterized pagination feature.
 
-To create features that allow users to filter results based on content type or timeframe, see filtering.jsp.
+To create features that allow users to filter results based on content type or timeframe, see [filtering.jsp](filtering.jsp).
 
 #### searchqueryformat.tag
 
