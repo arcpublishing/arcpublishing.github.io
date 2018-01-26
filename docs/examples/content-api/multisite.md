@@ -43,16 +43,16 @@ See ["Accessing the APIs" in the Publishing a Document Example](https://github.c
 
 Note for several key Arc APIs, new API versions have been released. In order to use multisite features, you'll need to use the following API versions:
 
-* URL API: v2 or higher (released 2018.01)
-* Site API: v3 or higher (released 2017.10)
-* Content API: v4 or higher (release 2018.01)
-* Story API: users can continue using the v2 API
+* [URL API](https://arcpublishing.github.io/docs/api/url/): v2 or higher (released 2018.01)
+* [Site API](https://arcpublishing.github.io/docs/api/site/): v3 or higher (released 2017.10)
+* [Content API](https://arcpublishing.atlassian.net/wiki/spaces/CA/pages/50928390/Content+API): v4 or higher (release 2018.01)
+* [Story API](https://arcpublishing.atlassian.net/wiki/spaces/CA/pages/13338279/Story+API): users can continue using the v2 API
 
 For Content API, Story API and URL API endpoints that expect or return an ANS document, ANS 0.6.0 or higher is also required to use multisite features.
 
 ## Create distinct section taxonomies
 
-We'll start by creating the websites and sections for our organization. Websites and sections are efined via the Site API. Full documentation for the Site API v3 is available at https://${ORGANIZATIONID}.arcpublishing.com/siteservice/doc/ (replacing ${ORGANIZATIONID} with your organization id.)
+We'll start by creating the websites and sections for our organization. Websites and sections are efined via the Site API. Full documentation for the Site API v3 is available at (https://arcpublishing.github.io/docs/api/site/).
 
 Let's create two websites called "The River City News" and "The Mountain Village Gazette."
 
