@@ -126,7 +126,7 @@ To display the search term to the user in a page header, we built a searchqueryf
 
 The following code takes in a query and outputs it in a plain-text sanitized string. This prevents any malicious code from being put into the page.
 
-```javascript
+```jsp
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -137,13 +137,13 @@ The following code takes in a query and outputs it in a plain-text sanitized str
 <%@ attribute name="var" required="true" type="java.lang.Object" %>
 <%@ attribute name="query" required="true" type="java.lang.Object" %>
 
-<%-- URL decode, since PB encodes it --%>
+<%-- URL decode the query parameter 'query.' --%>
 <c:set var="updatedQuery"><%=URLDecoder.decode(jspContext.getAttribute("query").toString())%></c:set>
 
-<%-- PB also transforms spaces into '+', which needs to be reverted --%>
+<%-- If '+' was encoded, re-decode into spaces.  --%>
 <c:set var="updatedQuery" value="${fn:replace(updatedQuery, '+', ' ')}" />
 
-<%-- in case any scripts were introduced as search-term, this will prevent them from running --%>
+<%-- In case any scripts were introduced as search-term, this will prevent them from running. (Prevents XSS.) --%>
 <c:set var="updatedQuery" value="${fn:escapeXml(updatedQuery)}" />
 
 ${pageContext.request.setAttribute(var, updatedQuery)}
