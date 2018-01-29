@@ -34,7 +34,7 @@ This guide will show how to use the Arc APIs to:
 
 * `section`-- A section is a hierarchical node within a website. The usually correspond to different verticals within a publication, for example, "Sports" or "Politics."
 
-* `document` -- A document is any piece of content that a user can publish to a website. An ANS document can be a story, image gallery, or video. Documents are searchable in the Content API and renderable using PageBuilder templates. See [the ANS document schema](https://github.com/washingtonpost/ans-schema). This guide will focus on story documents.
+* `document` -- A document is any piece of content that a user can publish to a website. An ANS document can be a story, gallery, or video. Documents are searchable in the Content API and renderable using PageBuilder templates. See [the ANS document schema](https://github.com/washingtonpost/ans-schema). This guide will focus on story documents.
 
 
 ## Accessing the APIs
