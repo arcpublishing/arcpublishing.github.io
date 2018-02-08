@@ -150,3 +150,17 @@ The following code takes in a query and outputs it in a plain-text sanitized str
 
 ${pageContext.request.setAttribute(var, updatedQuery)}
 ```
+
+## Questions
+
+#### Which attribute of the section (from Site Service) should be passed as the section parameter in Search API?
+
+The corresponding field from a section object is `site.name` as defined in Site Service. For example, to search for documents with "USA" in the body in a section titled "World Politics":
+
+```
+https://search.arcpublishing.com/search?q=USA&sections=World%20Politics&key=<your_key_here>
+```
+
+#### Is it possible to perform an exclusion filter in the Search API? E.g. suppose we are searching a website with sections 'News,' 'Sports,' 'Business' and 'Politics' and we want to get the search results from across all the sections *except* 'Politics.' Is this possible?
+
+This is not currently supported.
