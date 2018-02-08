@@ -161,6 +161,6 @@ The corresponding field from a section object is `site.name` as defined in Site 
 https://search.arcpublishing.com/search?q=USA&sections=World%20Politics&key=<your_key_here>
 ```
 
-#### Is it possible to perform an exclusion filter in the Search API? E.g. suppose we are searching a website with sections 'News,' 'Sports,' 'Business' and 'Politics' and we want to get the search results from across all the sections *except* 'Politics.' Is this possible?
+#### Is it possible to perform an exclusion filter in the Search API? E.g. suppose we are searching a website with sections News, Sports, Business and Politics and we want to get the search results from across all the sections *except* Politics. Is this possible?
 
-This is not currently supported.
+This is not currently supported. However, you can include the complete the list of sections in the `sections` parameter and omit the section you wish to exclude.
